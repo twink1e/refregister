@@ -1,0 +1,28 @@
+{
+  "name": "Refregister",
+  "version": "1.0",
+  "description": "Refresh page and click on Register",
+  "permissions": [
+      "declarativeContent",
+      "tabs",
+      "alarms",
+      "storage"
+    ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.eventbrite.sg/e/*"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3,
+  "icons": {
+    "128": "ballet.png"
+  }
+}
